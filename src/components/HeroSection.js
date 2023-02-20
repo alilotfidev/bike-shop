@@ -60,7 +60,7 @@ const HeroSecion = () => {
         <div className='buttons-wrapper'>
           <div className='prev'>
             <img
-              src='/images/vector-prev.png'
+              src='/images/vector-prev.svg'
               alt='prev bike'
               className='prev-vector'
             />
@@ -69,7 +69,7 @@ const HeroSecion = () => {
           <div className='next'>
             <p className='next-text'>Next</p>
             <img
-              src='/images/vector-next.png'
+              src='/images/vector-next.svg'
               alt='next bike'
               className='next-vector'
             />
