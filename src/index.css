@@ -5,6 +5,8 @@
 }
 *{
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
 
 }
 body {
@@ -13,4 +15,21 @@ body {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   color: var(--black-color);
+}
+a{
+ text-decoration: none;
+}
+.btn{
+  padding: .5em 2em;
+  border-radius: 4px;
+}
+.orange-btn{
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: .5em 1.5em;
+}
+.first-section{
+  min-height: 100vh;
+  position: relative;
 }

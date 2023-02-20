@@ -1,8 +1,12 @@
+import HeroSecion from './components/HeroSection';
 import Navbar from './components/Navbar';
 function App() {
   return (
     <div className='App'>
-      <Navbar />
+      <div className='first-section'>
+        <Navbar />
+        <HeroSecion />
+      </div>
     </div>
   );
 }
