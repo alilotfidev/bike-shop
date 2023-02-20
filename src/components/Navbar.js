@@ -15,7 +15,7 @@ const Navbar = () => {
           className='nav-search-input'
           placeholder='Search here'
         />
-        <button className='nav-search-button'>Search</button>
+        <button className='nav-search-button btn'>Search</button>
       </form>
     </nav>
   );

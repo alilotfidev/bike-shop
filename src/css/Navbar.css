@@ -1,7 +1,7 @@
 .Navbar{
     display: flex;
     justify-content: space-between;
-    padding: 1.5em;
+    padding: 1.5em 3em;
     position: relative;
 }
 .Navbar ul.nav-links{
@@ -9,11 +9,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0;
+
 }
 .Navbar ul.nav-links li.nav-link{
     margin: 0 2em;
-    /* font-size: 18px; */
     font-weight: 600;
     color: var(--grey-color);
     cursor: pointer;
@@ -33,6 +32,8 @@
     left: 50%;
     transform: translateX(-50%);    
     color: var(--primary-color);
+    vertical-align: middle;
+    margin-top: 1.3em;
 }
 .Navbar .nav-search{
     border: 1px solid var(--black-color);
@@ -46,6 +47,4 @@
 .Navbar .nav-search .nav-search-button{
     background-color: var(--black-color);
     color: white;
-    padding: .5em 2em;
-    border-radius: 4px;
 }
