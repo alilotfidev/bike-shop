@@ -1,0 +1,21 @@
+.CtaSection {
+  display: flex;
+  align-items: center;
+  padding: 1.5em 3em;
+  margin: 5vh 5vw;
+}
+.CtaSection .cta-section-image-wrapper {
+  max-width: 35vw;
+}
+.CtaSection .cta-section-image-wrapper .cta-section-image {
+  width: 100%;
+}
+
+.CtaSection .cta-section-content {
+  margin-left: 10vw;
+}
+.CtaSection .cta-section-content .cta-section-description {
+  margin: 3em 0;
+  max-width: 30vw;
+  color: var(--grey-color);
+}

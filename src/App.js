@@ -1,3 +1,4 @@
+import CtaSection from './components/CtaSection';
 import HeroSecion from './components/HeroSection';
 import Navbar from './components/Navbar';
 import NewArrivals from './components/NewArrivals';
@@ -17,6 +18,7 @@ function App() {
         <HeroSecion priceFormatter={priceFormatter} />
       </div>
       <NewArrivals priceFormatter={priceFormatter} />
+      <CtaSection />
     </div>
   );
 }
