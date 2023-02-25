@@ -1,0 +1,28 @@
+.NewArrivals {
+  background-color: white;
+  margin-top: 10vh;
+}
+.NewArrivals .new-arrivals-title {
+  text-align: center;
+}
+.NewArrivals .arrivlas-product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 2em;
+}
+.NewArrivals .arrivlas-product-list .arrivals-product {
+  background-color: var(--light-grey-color);
+  padding: 3em 2em;
+  margin: 1em 3em;
+  text-align: center;
+}
+.NewArrivals .arrivlas-product-list .arrivals-product img {
+  width: 100%;
+}
+.NewArrivals .arrivlas-product-list .arrivals-product .bicycle-name {
+  margin: 2em 0 1em 0;
+  color: var(--grey-color);
+}
+.NewArrivals .arrivlas-product-list .arrivals-product .bicycle-price {
+  color: var(--primary-color);
+}
