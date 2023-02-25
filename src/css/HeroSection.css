@@ -1,8 +1,12 @@
+.first-section {
+  background-color: var(--light-grey-color);
+}
 .HeroSecion {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 1.5em 3em;
   margin-top: 6vh;
+  margin-bottom: 6vh;
 }
 .hero-section-description .hero-section-title {
   font-size: 4em;

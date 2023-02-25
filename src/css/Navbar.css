@@ -1,50 +1,50 @@
-.Navbar{
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5em 3em;
-    position: relative;
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em 3em;
+  position: relative;
 }
-.Navbar ul.nav-links{
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+.Navbar ul.nav-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.Navbar ul.nav-links li.nav-link{
-    margin: 0 2em;
-    font-weight: 600;
-    color: var(--grey-color);
-    cursor: pointer;
+.Navbar ul.nav-links li.nav-link {
+  margin: 0 2em;
+  font-weight: 600;
+  color: var(--grey-color);
+  cursor: pointer;
 }
-.Navbar ul.nav-links li.nav-link.active{
-    color: var(--black-color);
+.Navbar ul.nav-links li.nav-link.active {
+  color: var(--black-color);
 }
-.Navbar ul.nav-links li.nav-link:last-child{
-    margin-right: 0;
+.Navbar ul.nav-links li.nav-link:last-child {
+  margin-right: 0;
 }
-.Navbar ul.nav-links li.nav-link:first-child{
-    margin-left: 0;
+.Navbar ul.nav-links li.nav-link:first-child {
+  margin-left: 0;
 }
-.Navbar .nav-logo{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);    
-    color: var(--primary-color);
-    vertical-align: middle;
-    margin-top: 1.3em;
+.Navbar .nav-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--primary-color);
+  vertical-align: middle;
+  margin-top: 1.3em;
 }
-.Navbar .nav-search{
-    border: 1px solid var(--black-color);
-    border-radius: 4px;
-    padding: .5em 1em;
+.Navbar .nav-search {
+  border: 1px solid var(--black-color);
+  border-radius: 4px;
+  padding: 0.5em 1em;
 }
-.Navbar .nav-search .nav-search-input{
-    outline: none;
-    border: none;
+.Navbar .nav-search .nav-search-input {
+  outline: none;
+  border: none;
+  background-color: var(--light-grey-color);
 }
-.Navbar .nav-search .nav-search-button{
-    background-color: var(--black-color);
-    color: white;
+.Navbar .nav-search .nav-search-button {
+  background-color: var(--black-color);
+  color: white;
 }

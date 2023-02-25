@@ -1,13 +1,6 @@
 import '../css/HeroSection.css';
 
-const HeroSecion = () => {
-  const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'EUR',
-    maximumFractionDigits: 0,
-    minimumFractionDigits: 0,
-  });
-
+const HeroSecion = ({ priceFormatter }) => {
   return (
     <div className='HeroSecion'>
       <div className='hero-section-description'>
@@ -54,7 +47,7 @@ const HeroSecion = () => {
           />
           <div className='bicycle-details'>
             <p className='bicycle-name'>ATLAS 6.8</p>
-            <p className='bicycle-price'>{formatter.format(2399)}</p>
+            <p className='bicycle-price'>{priceFormatter.format(2399)}</p>
           </div>
         </div>
         <div className='buttons-wrapper'>
