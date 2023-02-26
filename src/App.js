@@ -2,6 +2,7 @@ import CtaSection from './components/CtaSection';
 import HeroSecion from './components/HeroSection';
 import Navbar from './components/Navbar';
 import NewArrivals from './components/NewArrivals';
+import ServicesSection from './components/ServicesSection';
 
 function App() {
   const priceFormatter = new Intl.NumberFormat('en-US', {
@@ -19,6 +20,7 @@ function App() {
       </div>
       <NewArrivals priceFormatter={priceFormatter} />
       <CtaSection />
+      <ServicesSection />
     </div>
   );
 }

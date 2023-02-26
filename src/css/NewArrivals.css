@@ -9,6 +9,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 0 2em;
+  margin-top: 6vh;
 }
 .NewArrivals .arrivlas-product-list .arrivals-product {
   background-color: var(--light-grey-color);
