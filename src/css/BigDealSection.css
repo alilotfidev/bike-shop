@@ -1,0 +1,53 @@
+.BigDealSection {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5em;
+  margin-top: 6vh;
+}
+.BigDealSection .big-deal-section-product {
+  position: relative;
+}
+.BigDealSection .big-deal-section-product .bicycle-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.BigDealSection .big-deal-section-product .bicycle-info .bicycle-name {
+  font-size: 1.4em;
+}
+.BigDealSection .big-deal-section-product .bicycle-info .bicycle-price {
+  color: var(--primary-color);
+  margin-top: 0.5em;
+}
+.BigDealSection .big-deal-section-product .big-deal-section-product-image {
+  position: relative;
+  top: 1em;
+}
+.BigDealSection .deal-info {
+  font-weight: bold;
+}
+.BigDealSection .deal-info .deal-info-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+.BigDealSection .deal-info .deal-info-title::before {
+  content: '';
+  width: 65%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--lighter-grey-color);
+  z-index: -1;
+}
+.BigDealSection .deal-info .deal-info-title p {
+  margin-left: 1em;
+  font-size: 1.4em;
+  color: var(--primary-color);
+}
+.BigDealSection .deal-info .deal-info-description {
+  font-size: 2em;
+  margin-top: 1em;
+}
