@@ -1,0 +1,82 @@
+.CustomerCommentsSection {
+  padding: 1.5em;
+  margin-top: 6vh;
+}
+.CustomerCommentsSection .comments-section-title {
+  text-align: center;
+}
+.CustomerCommentsSection .comments {
+  display: flex;
+  justify-content: center;
+}
+.CustomerCommentsSection .comments .comment {
+  width: 30vw;
+  padding: 1.5em;
+  border: 2px solid var(--black-color);
+  border-radius: 4px;
+  margin: 4vh 1vw;
+}
+.CustomerCommentsSection .comments .comment.active {
+  width: 40vw;
+  color: white;
+  background-color: var(--black-color);
+}
+.CustomerCommentsSection .comments .comment.active .comment-icon {
+  color: white;
+}
+.CustomerCommentsSection .comments .comment .comment-icon {
+  font-size: 4em;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.CustomerCommentsSection .comments .comment .comment-content {
+  color: var(--grey-color);
+  max-width: 80%;
+}
+.CustomerCommentsSection .comments .comment .comment-author {
+  display: flex;
+  align-items: center;
+  margin-top: 6vh;
+}
+.CustomerCommentsSection
+  .comments
+  .comment
+  .comment-author
+  .comment-author-info {
+  margin-left: 1em;
+}
+.CustomerCommentsSection
+  .comments
+  .comment
+  .comment-author
+  .comment-author-info
+  .comment-author-name {
+  font-weight: bold;
+}
+.CustomerCommentsSection
+  .comments
+  .comment
+  .comment-author
+  .comment-author-info
+  .comment-author-company {
+  color: var(--grey-color);
+}
+.CustomerCommentsSection
+  .comments
+  .comment
+  .comment-author
+  .comment-author-image {
+  width: 3.75em;
+  height: 3.75em;
+}
+.CustomerCommentsSection
+  .comments
+  .comment
+  .comment-author
+  .comment-author-image
+  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}
