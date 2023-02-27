@@ -1,4 +1,5 @@
 import BigDealSection from './components/BigDealSection';
+import ContactInfoSection from './components/ContactInfoSection';
 import CtaSection from './components/CtaSection';
 import CustomerCommentsSection from './components/CustomerCommentsSection';
 import HeroSecion from './components/HeroSection';
@@ -25,6 +26,7 @@ function App() {
       <ServicesSection />
       <BigDealSection priceFormatter={priceFormatter} />
       <CustomerCommentsSection />
+      <ContactInfoSection />
     </div>
   );
 }

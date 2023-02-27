@@ -1,0 +1,35 @@
+.ContactInfoSection {
+  padding: 1.5em;
+  background-color: var(--light-grey-color);
+}
+.ContactInfoSection .contact-info-title {
+  text-align: center;
+}
+.ContactInfoSection .contact-info-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 6vh;
+}
+.ContactInfoSection .contact-info-wrapper .contact-info {
+  padding: 2em;
+  display: flex;
+}
+.ContactInfoSection .contact-info-wrapper .contact-info .contact-info-content {
+  margin-left: 1em;
+}
+.ContactInfoSection
+  .contact-info-wrapper
+  .contact-info
+  .contact-info-content
+  h4 {
+  font-weight: bold;
+}
+.ContactInfoSection
+  .contact-info-wrapper
+  .contact-info
+  .contact-info-content
+  p {
+  color: var(--grey-color);
+  font-size: 0.8em;
+  margin-top: 0.2em;
+}
