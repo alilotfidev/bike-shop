@@ -53,7 +53,7 @@ const HeroSecion = ({ priceFormatter }) => {
         <div className='buttons-wrapper'>
           <div className='prev'>
             <img
-              src='/images/vector-prev.svg'
+              src='/images/icons/vector-prev.svg'
               alt='prev bike'
               className='prev-vector'
             />
@@ -62,7 +62,7 @@ const HeroSecion = ({ priceFormatter }) => {
           <div className='next'>
             <p className='next-text'>Next</p>
             <img
-              src='/images/vector-next.svg'
+              src='/images/icons/vector-next.svg'
               alt='next bike'
               className='next-vector'
             />
