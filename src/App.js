@@ -6,6 +6,7 @@ import HeroSecion from './components/HeroSection';
 import Navbar from './components/Navbar';
 import NewArrivals from './components/NewArrivals';
 import ServicesSection from './components/ServicesSection';
+import Footer from './components/Footer';
 
 function App() {
   const priceFormatter = new Intl.NumberFormat('en-US', {
@@ -27,6 +28,7 @@ function App() {
       <BigDealSection priceFormatter={priceFormatter} />
       <CustomerCommentsSection />
       <ContactInfoSection />
+      <Footer />
     </div>
   );
 }
