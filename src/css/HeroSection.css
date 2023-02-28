@@ -91,3 +91,35 @@
 .buttons-wrapper .prev:hover .prev-vector {
   transform: translateX(-8px);
 }
+
+@media screen and (max-width: 1000px) {
+  .hero-section-bicycle .bicycle {
+    top: 25vh;
+    left: 5vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  .hero-section-bicycle .bicycle {
+    top: 35vh;
+  }
+}
+@media screen and (max-width: 750px) {
+  .HeroSecion {
+    grid-template-columns: 1fr;
+  }
+  .hero-section-bicycle .bicycle {
+    top: 0;
+    right: 0;
+    margin-right: 2em;
+    flex-direction: column-reverse;
+  }
+  .buttons-wrapper {
+    position: relative;
+    bottom: 15vh;
+    width: 100vw;
+  }
+  .hero-section-description .hero-section-links {
+    left: 40%;
+    transform: translateX(-40%);
+  }
+}

@@ -1,3 +1,6 @@
+import { useRef } from 'react';
+
+// components
 import BigDealSection from './components/BigDealSection';
 import ContactInfoSection from './components/ContactInfoSection';
 import CtaSection from './components/CtaSection';
@@ -15,11 +18,11 @@ function App() {
     maximumFractionDigits: 0,
     minimumFractionDigits: 0,
   });
-
+  const bodyRef = useRef();
   return (
-    <div className='App'>
+    <div className='App' ref={bodyRef}>
       <div className='first-section'>
-        <Navbar />
+        <Navbar bodyRef={bodyRef} />
         <HeroSecion priceFormatter={priceFormatter} />
       </div>
       <NewArrivals priceFormatter={priceFormatter} />

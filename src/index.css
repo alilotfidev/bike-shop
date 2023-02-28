@@ -37,3 +37,24 @@ h2 {
   min-height: 100vh;
   position: relative;
 }
+
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 300px) {
+  body {
+    font-size: 10px;
+  }
+}

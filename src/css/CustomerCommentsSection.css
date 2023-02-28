@@ -80,3 +80,15 @@
   object-fit: cover;
   border-radius: 100%;
 }
+
+/* responsive */
+@media screen and (max-width: 650px) {
+  .CustomerCommentsSection .comments {
+    flex-direction: column;
+  }
+  .CustomerCommentsSection .comments .comment,
+  .CustomerCommentsSection .comments .comment.active {
+    width: 70vw;
+    margin: 4vh auto;
+  }
+}
