@@ -19,3 +19,28 @@
   max-width: 30vw;
   color: var(--grey-color);
 }
+
+/* responsive */
+@media screen and (max-width: 800px) {
+  .CtaSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .CtaSection .cta-section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .CtaSection .cta-section-content > * {
+    margin: 1.5em 0;
+  }
+  .CtaSection .cta-section-image-wrapper {
+    max-width: 60vw;
+  }
+  .CtaSection .cta-section-content .cta-section-description {
+    margin: 0;
+    max-width: 60vw;
+  }
+}

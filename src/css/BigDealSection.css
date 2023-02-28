@@ -51,3 +51,19 @@
   font-size: 2em;
   margin-top: 1em;
 }
+
+/* responsive */
+@media screen and (max-width: 850px) {
+  .BigDealSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .BigDealSection .big-deal-section-product .big-deal-section-product-image {
+    width: 70%;
+  }
+  .BigDealSection .deal-info .deal-info-description {
+    margin-bottom: 1.5em;
+    font-size: 1.8em;
+  }
+}

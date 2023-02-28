@@ -13,6 +13,9 @@
   max-width: 20vw;
   text-align: center;
 }
+.ServicesSection .services .service .service-image img {
+  width: 30%;
+}
 .ServicesSection .services .service .service-title {
   margin: 1em 0;
   font-size: 1.2em;
@@ -21,4 +24,21 @@
 .ServicesSection .services .service .service-description {
   color: var(--grey-color);
   font-size: 0.9em;
+}
+
+/* responsive */
+@media screen and (max-width: 600px) {
+  .ServicesSection .services {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ServicesSection .services .service {
+    max-width: 60vw;
+  }
+  .ServicesSection .services .service:nth-child(2) {
+    margin: 2em 0;
+  }
+  .ServicesSection .services .service .service-image img {
+    width: 20%;
+  }
 }

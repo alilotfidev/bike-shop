@@ -1,22 +1,36 @@
+import { useEffect, useState } from 'react';
 import '../css/Navbar.css';
-const Navbar = () => {
+const Navbar = ({ bodyRef }) => {
+  const [showMenu, setShoeMenu] = useState(false);
+  useEffect(() => {
+    bodyRef.current.style.position = showMenu ? 'fixed' : '';
+  }, [showMenu, bodyRef]);
+  console.log(bodyRef.current.style.position);
   return (
     <nav className='Navbar'>
-      <ul className='nav-links'>
+      <h2 className='nav-logo'>BikeMax</h2>
+      <ul className={`nav-links ${showMenu ? 'active' : ''}`}>
+        <div
+          className='close-menu'
+          onClick={() => {
+            setShoeMenu(false);
+          }}
+        >
+          Close menu
+        </div>
         <li className='nav-link active'>Home</li>
         <li className='nav-link'>Catalog</li>
         <li className='nav-link'>Services</li>
         <li className='nav-link'>Promo</li>
       </ul>
-      <h2 className='nav-logo'>BikeMax</h2>
-      <form className='nav-search'>
-        <input
-          type='text'
-          className='nav-search-input'
-          placeholder='Search here'
-        />
-        <button className='nav-search-button btn'>Search</button>
-      </form>
+      <img
+        src='/images/icons/responsive-menu.svg'
+        alt='show menu'
+        className='show-menu'
+        onClick={() => {
+          setShoeMenu(true);
+        }}
+      />
     </nav>
   );
 };

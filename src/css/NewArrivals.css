@@ -27,3 +27,15 @@
 .NewArrivals .arrivlas-product-list .arrivals-product .bicycle-price {
   color: var(--primary-color);
 }
+
+/* responsive */
+@media screen and (max-width: 1200px) {
+  .NewArrivals .arrivlas-product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .NewArrivals .arrivlas-product-list {
+    grid-template-columns: 1fr;
+  }
+}
