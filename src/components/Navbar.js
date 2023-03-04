@@ -3,9 +3,10 @@ import '../css/Navbar.css';
 const Navbar = ({ bodyRef }) => {
   const [showMenu, setShoeMenu] = useState(false);
   useEffect(() => {
-    bodyRef.current.style.position = showMenu ? 'fixed' : '';
+    if (bodyRef.current) {
+      bodyRef.current.style.position = showMenu ? 'fixed' : '';
+    }
   }, [showMenu, bodyRef]);
-  console.log(bodyRef.current.style.position);
   return (
     <nav className='Navbar'>
       <h2 className='nav-logo'>BikeMax</h2>
