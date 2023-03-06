@@ -15,6 +15,7 @@
   border: 2px solid var(--black-color);
   border-radius: 4px;
   margin: 4vh 1vw;
+  transition: all 0.3s ease-in-out;
 }
 .CustomerCommentsSection .comments .comment.active {
   width: 40vw;
