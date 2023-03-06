@@ -1,6 +1,7 @@
 import '../css/HeroSection.css';
 
-const HeroSecion = ({ priceFormatter }) => {
+const HeroSecion = ({ priceFormatter, product }) => {
+  console.log(product);
   return (
     <div className='HeroSecion'>
       <div className='hero-section-description'>
@@ -41,13 +42,15 @@ const HeroSecion = ({ priceFormatter }) => {
       <div className='hero-section-bicycle'>
         <div className='bicycle'>
           <img
-            src='/images/ATLAS-6.8.png'
-            alt='ATLAS 6.8'
+            src={product.image.url}
+            alt={product.name}
             className='bicycle-image'
           />
           <div className='bicycle-details'>
-            <p className='bicycle-name'>ATLAS 6.8</p>
-            <p className='bicycle-price'>{priceFormatter.format(2399)}</p>
+            <p className='bicycle-name'>{product.name}</p>
+            <p className='bicycle-price'>
+              {priceFormatter.format(product.price.raw)}
+            </p>
           </div>
         </div>
         <div className='buttons-wrapper'>

@@ -13,12 +13,12 @@ import Footer from './components/Footer';
 
 // commerce instance
 import commerce from './lib/commerce';
+import Loading from './components/Loading';
 
 function App() {
   // products states
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
   // fetching products data
   const fetchProducts = () => {
     setIsLoading(true);
@@ -46,17 +46,25 @@ function App() {
   const bodyRef = useRef();
   return (
     <div className='App' ref={bodyRef}>
-      <div className='first-section'>
-        <Navbar bodyRef={bodyRef} />
-        <HeroSecion priceFormatter={priceFormatter} />
-      </div>
-      <NewArrivals priceFormatter={priceFormatter} />
-      <CtaSection />
-      <ServicesSection />
-      <BigDealSection priceFormatter={priceFormatter} />
-      <CustomerCommentsSection />
-      <ContactInfoSection />
-      <Footer />
+      {isLoading && <Loading />}
+      {products.length !== 0 && (
+        <div className='content'>
+          <div className='first-section'>
+            <Navbar bodyRef={bodyRef} />
+            <HeroSecion priceFormatter={priceFormatter} product={products[0]} />
+          </div>
+          <NewArrivals priceFormatter={priceFormatter} products={products} />
+          <CtaSection />
+          <ServicesSection />
+          <BigDealSection
+            priceFormatter={priceFormatter}
+            product={products[3]}
+          />
+          <CustomerCommentsSection />
+          <ContactInfoSection />
+          <Footer />
+        </div>
+      )}
     </div>
   );
 }

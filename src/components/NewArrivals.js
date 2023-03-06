@@ -1,5 +1,18 @@
 import '../css/NewArrivals.css';
-const NewArrivals = ({ priceFormatter }) => {
+const NewArrivals = ({ priceFormatter, products }) => {
+  const productsListElements = products.map((product) => (
+    <div className='arrivals-product' key={product.id}>
+      <img
+        src={product.image.url}
+        alt={product.name}
+        className='arrivals-product-image'
+      />
+      <p className='bicycle-name'>{product.name}</p>
+      <p className='bicycle-price'>
+        {priceFormatter.format(product.price.raw)}
+      </p>
+    </div>
+  ));
   return (
     <div className='NewArrivals'>
       <h2 className='new-arrivals-title'>
@@ -7,44 +20,7 @@ const NewArrivals = ({ priceFormatter }) => {
         <br />
         Our New Arrivals
       </h2>
-      <div className='arrivlas-product-list'>
-        <div className='arrivals-product'>
-          <img
-            src='/images/ATLAS-6.7-EQP.png'
-            alt='ATLAS 6.7 EQP'
-            className='arrivals-product-image'
-          />
-          <p className='bicycle-name'>ATLAS 6.7 EQP</p>
-          <p className='bicycle-price'>{priceFormatter.format(2099)}</p>
-        </div>
-        <div className='arrivals-product'>
-          <img
-            src='/images/ATLAS-6.8.png'
-            alt='ATLAS 6.8'
-            className='arrivals-product-image'
-          />
-          <p className='bicycle-name'>ATLAS 6.8</p>
-          <p className='bicycle-price'>{priceFormatter.format(2399)}</p>
-        </div>
-        <div className='arrivals-product'>
-          <img
-            src='/images/ATLAS-6.7.png'
-            alt='ATLAS 6.7'
-            className='arrivals-product-image'
-          />
-          <p className='bicycle-name'>ATLAS 6.7</p>
-          <p className='bicycle-price'>{priceFormatter.format(1899)}</p>
-        </div>
-        <div className='arrivals-product'>
-          <img
-            src='/images/ATLAS-6.8-EQP.png'
-            alt='ATLAS 6.8 EQP'
-            className='arrivals-product-image'
-          />
-          <p className='bicycle-name'>ATLAS 6.8 EQP</p>
-          <p className='bicycle-price'>{priceFormatter.format(1699)}</p>
-        </div>
-      </div>
+      <div className='arrivlas-product-list'>{productsListElements}</div>
     </div>
   );
 };

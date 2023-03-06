@@ -1,5 +1,5 @@
 import '../css/BigDealSection.css';
-const BigDealSection = ({ priceFormatter }) => {
+const BigDealSection = ({ priceFormatter, product }) => {
   return (
     <div className='BigDealSection'>
       <div className='deal-info'>
@@ -15,13 +15,15 @@ const BigDealSection = ({ priceFormatter }) => {
       </div>
       <div className='big-deal-section-product'>
         <img
-          src='/images/ATLAS-6.8.png'
-          alt='ATLAS 6.8'
+          src={product.image.url}
+          alt={product.name}
           className='big-deal-section-product-image'
         />
         <div className='bicycle-info'>
-          <h4 className='bicycle-name'>ATLAS 6.8</h4>
-          <p className='bicycle-price'>{priceFormatter.format(2399)}</p>
+          <h4 className='bicycle-name'>{product.name}</h4>
+          <p className='bicycle-price'>
+            {priceFormatter.format(product.price.raw)}
+          </p>
         </div>
       </div>
     </div>
