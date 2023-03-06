@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // components
 import BigDealSection from './components/BigDealSection';
@@ -11,7 +11,32 @@ import NewArrivals from './components/NewArrivals';
 import ServicesSection from './components/ServicesSection';
 import Footer from './components/Footer';
 
+// commerce instance
+import commerce from './lib/commerce';
+
 function App() {
+  // products states
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // fetching products data
+  const fetchProducts = () => {
+    setIsLoading(true);
+    commerce.products
+      .list()
+      .then((products) => {
+        setProducts(products.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log('There was an error fetching the products', error);
+        setIsLoading(false);
+      });
+  };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   const priceFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'EUR',
