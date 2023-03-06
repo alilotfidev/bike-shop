@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import '../css/CustomerCommentsSection.css';
 const CustomerCommentsSection = () => {
-  // TODO: changing active comment
+  const [activeComment, setActiveComment] = useState(0);
   return (
     <div className='CustomerCommentsSection'>
       <h2 className='comments-section-title'>
@@ -8,7 +9,10 @@ const CustomerCommentsSection = () => {
         <br /> Are Saying About Us
       </h2>
       <div className='comments'>
-        <div className='comment active'>
+        <div
+          className={`comment ${activeComment === 0 ? 'active' : ''}`}
+          onMouseEnter={() => setActiveComment(0)}
+        >
           <p className='comment-icon'>“</p>
           <p className='comment-content'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -25,7 +29,10 @@ const CustomerCommentsSection = () => {
             </div>
           </div>
         </div>
-        <div className='comment'>
+        <div
+          className={`comment ${activeComment === 1 ? 'active' : ''}`}
+          onMouseEnter={() => setActiveComment(1)}
+        >
           <p className='comment-icon'>“</p>
           <p className='comment-content'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
