@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
 import '../css/Navbar.css';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 const Navbar = ({ bodyRef }) => {
   const [showMenu, setShoeMenu] = useState(false);
   useEffect(() => {
@@ -9,7 +11,9 @@ const Navbar = ({ bodyRef }) => {
   }, [showMenu, bodyRef]);
   return (
     <nav className='Navbar'>
-      <h2 className='nav-logo'>BikeMax</h2>
+      <h2 className='nav-logo'>
+        <Link to='/'>BikeMax</Link>
+      </h2>
       <ul className={`nav-links ${showMenu ? 'active' : ''}`}>
         <div
           className='close-menu'
@@ -19,8 +23,12 @@ const Navbar = ({ bodyRef }) => {
         >
           Close menu
         </div>
-        <li className='nav-link active'>Home</li>
-        <li className='nav-link'>Catalog</li>
+        <li className='nav-link active'>
+          <Link to='/'>Home</Link>
+        </li>
+        <li className='nav-link'>
+          <Link to='/shop'>Shop</Link>
+        </li>
         <li className='nav-link'>Services</li>
         <li className='nav-link'>Promo</li>
       </ul>

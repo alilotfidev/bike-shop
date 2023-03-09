@@ -1,0 +1,35 @@
+.Shop {
+  padding: 1.5em;
+}
+.shop-product-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin: 0 2em;
+}
+.shop-product-list .shop-product {
+  background-color: var(--light-grey-color);
+  padding: 3em 2em;
+  margin: 1em auto;
+  text-align: center;
+  max-width: 25vw;
+}
+.shop-product-list .shop-product img {
+  width: 100%;
+}
+.shop-product-list .shop-product .bicycle-name {
+  margin: 2em 0 1em 0;
+  color: var(--grey-color);
+}
+.shop-product-list .shop-product .bicycle-price {
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 500px) {
+  .shop-product-list {
+    grid-template-columns: 1fr;
+  }
+  .shop-product-list .shop-product {
+    max-width: 35vw;
+  }
+}

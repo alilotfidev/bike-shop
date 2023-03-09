@@ -14,7 +14,7 @@ const Footer = () => {
           <br />
           Next Bicycle
         </h2>
-        <p className='footer-copyright'>2021 Ibey Design. Allright reserved</p>
+        <p className='footer-copyright'>2023 BikeMax. Allright reserved</p>
       </div>
       <div className='footer-links'>
         <div className='links-wrapper'>
