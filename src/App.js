@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+//react router
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // components
 import BigDealSection from './components/BigDealSection';
@@ -10,6 +12,7 @@ import Navbar from './components/Navbar';
 import NewArrivals from './components/NewArrivals';
 import ServicesSection from './components/ServicesSection';
 import Footer from './components/Footer';
+import Shop from './components/Shop';
 
 // commerce instance
 import commerce from './lib/commerce';
@@ -45,27 +48,45 @@ function App() {
   });
   const bodyRef = useRef();
   return (
-    <div className='App' ref={bodyRef}>
-      {isLoading && <Loading />}
-      {products.length !== 0 && (
-        <div className='content'>
-          <div className='first-section'>
+    <Router>
+      <div className='App' ref={bodyRef}>
+        {isLoading && <Loading />}
+
+        <Switch>
+          <Route path='/' exact>
+            {products.length !== 0 && (
+              <div className='content'>
+                <div className='first-section'>
+                  <Navbar bodyRef={bodyRef} />
+                  <HeroSecion
+                    priceFormatter={priceFormatter}
+                    product={products[0]}
+                  />
+                </div>
+                <NewArrivals
+                  priceFormatter={priceFormatter}
+                  products={products}
+                />
+                <CtaSection />
+                <ServicesSection />
+                <BigDealSection
+                  priceFormatter={priceFormatter}
+                  product={products[3]}
+                />
+                <CustomerCommentsSection />
+                <ContactInfoSection />
+                <Footer />
+              </div>
+            )}
+          </Route>
+          <Route path='/shop'>
             <Navbar bodyRef={bodyRef} />
-            <HeroSecion priceFormatter={priceFormatter} product={products[0]} />
-          </div>
-          <NewArrivals priceFormatter={priceFormatter} products={products} />
-          <CtaSection />
-          <ServicesSection />
-          <BigDealSection
-            priceFormatter={priceFormatter}
-            product={products[3]}
-          />
-          <CustomerCommentsSection />
-          <ContactInfoSection />
-          <Footer />
-        </div>
-      )}
-    </div>
+            <Shop products={products} priceFormatter={priceFormatter} />
+            <Footer />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
