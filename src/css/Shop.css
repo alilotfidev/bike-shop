@@ -24,6 +24,13 @@
 .shop-product-list .shop-product .bicycle-price {
   color: var(--primary-color);
 }
+.shop-product-list .shop-product .add-to-cart {
+  margin-top: 1em;
+  cursor: pointer;
+  color: var(--primary-color);
+  border: none;
+  background-color: var(--light-grey-color);
+}
 
 @media screen and (max-width: 500px) {
   .shop-product-list {

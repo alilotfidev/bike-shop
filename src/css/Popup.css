@@ -1,0 +1,11 @@
+.Popup {
+  max-width: 40vw;
+  padding: 0.8em 2em;
+  position: fixed;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  border-radius: 16px;
+  font-weight: bold;
+}

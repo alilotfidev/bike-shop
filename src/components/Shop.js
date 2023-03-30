@@ -1,5 +1,8 @@
 import '../css/Shop.css';
-const Shop = ({ products, priceFormatter }) => {
+const Shop = ({ products, priceFormatter, onAddToCart }) => {
+  const handleAddToCart = (id) => {
+    onAddToCart(id, 1);
+  };
   const productsListElements = products.map((product) => (
     <div className='shop-product' key={product.id}>
       <img
@@ -11,9 +14,14 @@ const Shop = ({ products, priceFormatter }) => {
       <p className='bicycle-price'>
         {priceFormatter.format(product.price.raw)}
       </p>
+      <button
+        className='add-to-cart'
+        onClick={() => handleAddToCart(product.id)}
+      >
+        add to cart
+      </button>
     </div>
   ));
-  console.log(products);
   return (
     <div className='Shop'>
       <div className='shop-product-list'>{productsListElements}</div>
