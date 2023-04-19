@@ -18,6 +18,7 @@ import Popup from './components/Popup';
 // commerce instance
 import commerce from './lib/commerce';
 import Loading from './components/Loading';
+import Cart from './components/Cart';
 
 function App() {
   // products states
@@ -84,7 +85,39 @@ function App() {
         });
       });
   };
-
+  const handleUpdateCartQty = (lineItemId, quantity) => {
+    commerce.cart
+      .update(lineItemId, { quantity })
+      .then((resp) => {
+        setCart(resp.cart);
+      })
+      .catch((error) => {
+        console.log('There was an error updating the cart items', error);
+      });
+  };
+  const handleRemoveFromCart = (lineItemId) => {
+    commerce.cart
+      .remove(lineItemId)
+      .then((resp) => {
+        setCart(resp.cart);
+      })
+      .catch((error) => {
+        console.error(
+          'There was an error removing the item from the cart',
+          error
+        );
+      });
+  };
+  const handleEmptyCart = () => {
+    commerce.cart
+      .empty()
+      .then((resp) => {
+        setCart(resp.cart);
+      })
+      .catch((error) => {
+        console.error('There was an error emptying the cart', error);
+      });
+  };
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -146,6 +179,17 @@ function App() {
               products={products}
               priceFormatter={priceFormatter}
               onAddToCart={handleAddToCart}
+            />
+            <Footer />
+          </Route>
+          <Route path='/cart'>
+            <Navbar bodyRef={bodyRef} />
+            <Cart
+              cart={cart}
+              priceFormatter={priceFormatter}
+              onUpdateCartQty={handleUpdateCartQty}
+              onRemoveFromCart={handleRemoveFromCart}
+              onEmptyCart={handleEmptyCart}
             />
             <Footer />
           </Route>

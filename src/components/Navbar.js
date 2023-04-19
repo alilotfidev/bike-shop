@@ -30,7 +30,9 @@ const Navbar = ({ bodyRef }) => {
           <Link to='/shop'>Shop</Link>
         </li>
         <li className='nav-link'>Services</li>
-        <li className='nav-link'>Promo</li>
+        <li className='nav-link'>
+          <Link to='/cart'>Cart</Link>
+        </li>
       </ul>
       <img
         src='/images/icons/responsive-menu.svg'
