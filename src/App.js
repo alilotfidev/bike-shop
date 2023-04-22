@@ -19,12 +19,15 @@ import Popup from './components/Popup';
 import commerce from './lib/commerce';
 import Loading from './components/Loading';
 import Cart from './components/Cart';
+import Checkout from './components/Checkout';
+import ConfirmationPage from './components/ConfirmationPage';
 
 function App() {
   // products states
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [order, setOrder] = useState({});
   const [popup, setPopup] = useState({
     show: false,
     content: '',
@@ -118,6 +121,29 @@ function App() {
         console.error('There was an error emptying the cart', error);
       });
   };
+  const refreshCart = async () => {
+    const newCart = commerce.cart.refresh();
+    setCart(newCart);
+  };
+  const handleCaptureCheckout = async (checkoutTokenID, newOrder) => {
+    try {
+      // console.log(newOrder);
+      // const incomingOrder = await commerce.checkout.capture(
+      //   checkoutTokenID,
+      //   newOrder
+      // );
+      // setOrder(incomingOrder);
+      // refreshCart();
+      //confirmation page
+      // console.log(order);
+
+      // for now we just want to show a fake confirmation page and dont do the real checkout
+      refreshCart();
+      // redirecting is done in the paymentForm component
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -182,7 +208,7 @@ function App() {
             />
             <Footer />
           </Route>
-          <Route path='/cart'>
+          <Route exact path='/cart'>
             <Navbar bodyRef={bodyRef} />
             <Cart
               cart={cart}
@@ -191,6 +217,21 @@ function App() {
               onRemoveFromCart={handleRemoveFromCart}
               onEmptyCart={handleEmptyCart}
             />
+            <Footer />
+          </Route>
+          <Route exact path='/checkout'>
+            <Navbar bodyRef={bodyRef} />
+            <Checkout
+              cart={cart}
+              order={order}
+              onCaptureCheckout={handleCaptureCheckout}
+              commerce={commerce}
+            />
+            <Footer />
+          </Route>
+          <Route exact path='/confirmation'>
+            <Navbar bodyRef={bodyRef} />
+            <ConfirmationPage />
             <Footer />
           </Route>
         </Switch>

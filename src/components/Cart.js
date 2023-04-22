@@ -1,5 +1,7 @@
 import '../css/Cart.css';
 import CartItem from './CartItem';
+import { useHistory } from 'react-router-dom';
+
 const Cart = ({
   cart,
   priceFormatter,
@@ -7,7 +9,7 @@ const Cart = ({
   onRemoveFromCart,
   onEmptyCart,
 }) => {
-  console.log(priceFormatter);
+  const history = useHistory();
   const cartItems =
     cart.total_unique_items > 0
       ? cart.line_items.map((item) => (
@@ -30,7 +32,9 @@ const Cart = ({
           <h4 className='cart-heading'>Your Shopping Cart</h4>
           <div className='cart-items'>{cartItems}</div>
           <div className='cart-footer'>
-            <button className='btn'>Checkout</button>
+            <button className='btn' onClick={() => history.push('/checkout')}>
+              Checkout
+            </button>
             <button className='btn' onClick={handleEmptyCart}>
               Empty Cart
             </button>

@@ -1,0 +1,23 @@
+.ConfirmationPage {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ConfirmationPage .confirmation-animation {
+  width: 22em;
+}
+.ConfirmationPage .confirmation-text {
+  margin: 1em 0;
+}
+.ConfirmationPage .confirmation-home-button {
+  transition: all 0.3s ease-in-out;
+}
+.ConfirmationPage .confirmation-home-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: transparent;
+}
