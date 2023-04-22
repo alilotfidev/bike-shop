@@ -1,13 +1,19 @@
 import '../css/NewArrivals.css';
+import { Link } from 'react-router-dom';
+
 const NewArrivals = ({ priceFormatter, products }) => {
   const productsListElements = products.map((product) => (
     <div className='arrivals-product' key={product.id}>
-      <img
-        src={product.image.url}
-        alt={product.name}
-        className='arrivals-product-image'
-      />
-      <p className='bicycle-name'>{product.name}</p>
+      <Link to='/shop'>
+        <img
+          src={product.image.url}
+          alt={product.name}
+          className='arrivals-product-image'
+        />
+      </Link>
+      <Link to='/shop'>
+        <p className='bicycle-name'>{product.name}</p>
+      </Link>
       <p className='bicycle-price'>
         {priceFormatter.format(product.price.raw)}
       </p>

@@ -1,4 +1,6 @@
 import '../css/BigDealSection.css';
+import { Link } from 'react-router-dom';
+
 const BigDealSection = ({ priceFormatter, product }) => {
   return (
     <div className='BigDealSection'>
@@ -14,13 +16,18 @@ const BigDealSection = ({ priceFormatter, product }) => {
         </div>
       </div>
       <div className='big-deal-section-product'>
-        <img
-          src={product.image.url}
-          alt={product.name}
-          className='big-deal-section-product-image'
-        />
+        <Link to='/shop'>
+          <img
+            src={product.image.url}
+            alt={product.name}
+            className='big-deal-section-product-image'
+          />
+        </Link>
+
         <div className='bicycle-info'>
-          <h4 className='bicycle-name'>{product.name}</h4>
+          <Link to='/shop'>
+            <h4 className='bicycle-name'>{product.name}</h4>
+          </Link>
           <p className='bicycle-price'>
             {priceFormatter.format(product.price.raw)}
           </p>

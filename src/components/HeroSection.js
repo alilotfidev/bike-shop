@@ -1,7 +1,7 @@
 import '../css/HeroSection.css';
+import { Link } from 'react-router-dom';
 
 const HeroSecion = ({ priceFormatter, product }) => {
-  console.log(product);
   return (
     <div className='HeroSecion'>
       <div className='hero-section-description'>
@@ -14,7 +14,9 @@ const HeroSecion = ({ priceFormatter, product }) => {
           offer one-stop shopping for cycling acces­sories, spares and bike
           wear.
         </p>
-        <button className='hero-section-cta btn orange-btn'>Explore now</button>
+        <button className='hero-section-cta btn orange-btn'>
+          <Link to='/shop'>Explore now</Link>
+        </button>
         <div className='hero-section-links'>
           <div className='hero-section-link'>
             <a
@@ -47,7 +49,10 @@ const HeroSecion = ({ priceFormatter, product }) => {
             className='bicycle-image'
           />
           <div className='bicycle-details'>
-            <p className='bicycle-name'>{product.name}</p>
+            <p className='bicycle-name'>
+              <Link to='/shop'>{product.name} </Link>
+            </p>
+
             <p className='bicycle-price'>
               {priceFormatter.format(product.price.raw)}
             </p>

@@ -1,4 +1,5 @@
 import '../css/CtaSection.css';
+import { Link } from 'react-router-dom';
 
 const CtaSection = () => {
   return (
@@ -18,7 +19,7 @@ const CtaSection = () => {
           metus, eu tincidunt felis ligula in turpis.
         </p>
         <button className='cta-section-button btn orange-btn'>
-          Explore now
+          <Link to='/shop'>Explore now</Link>
         </button>
       </div>
     </div>
