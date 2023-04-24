@@ -27,6 +27,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [addingProduct, setAddingProduct] = useState(false);
   const [order, setOrder] = useState({});
   const [popup, setPopup] = useState({
     show: false,
@@ -67,6 +68,7 @@ function App() {
       });
   };
   const handleAddToCart = (productId, quantity) => {
+    setAddingProduct(true);
     commerce.cart
       .add(productId, quantity)
       .then((item) => {
@@ -77,6 +79,7 @@ function App() {
           textColor: 'white',
           backgroundColor: '#0c1310',
         });
+        setAddingProduct(false);
       })
       .catch((error) => {
         console.error('There was an error adding the item to the cart', error);
@@ -86,6 +89,7 @@ function App() {
           textColor: 'white',
           backgroundColor: '#0c1310',
         });
+        setAddingProduct(false);
       });
   };
   const handleUpdateCartQty = (lineItemId, quantity) => {
@@ -205,6 +209,7 @@ function App() {
               products={products}
               priceFormatter={priceFormatter}
               onAddToCart={handleAddToCart}
+              addingProduct={addingProduct}
             />
             <Footer />
           </Route>

@@ -1,5 +1,5 @@
 import '../css/Shop.css';
-const Shop = ({ products, priceFormatter, onAddToCart }) => {
+const Shop = ({ products, priceFormatter, onAddToCart, addingProduct }) => {
   const handleAddToCart = (id) => {
     onAddToCart(id, 1);
   };
@@ -17,8 +17,9 @@ const Shop = ({ products, priceFormatter, onAddToCart }) => {
       <button
         className='add-to-cart'
         onClick={() => handleAddToCart(product.id)}
+        disabled={addingProduct}
       >
-        add to cart
+        {addingProduct ? 'adding selected item to cart...' : 'add to cart'}
       </button>
     </div>
   ));
