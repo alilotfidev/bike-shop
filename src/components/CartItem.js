@@ -5,6 +5,7 @@ const CartItem = ({
   onUpdateCartQty,
   onRemoveFromCart,
 }) => {
+  // for running the functions in the app component
   const handleUpdateCartQty = (lineItemId, quantity) => {
     onUpdateCartQty(lineItemId, quantity);
   };

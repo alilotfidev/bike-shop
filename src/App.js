@@ -14,21 +14,24 @@ import ServicesSection from './components/ServicesSection';
 import Footer from './components/Footer';
 import Shop from './components/Shop';
 import Popup from './components/Popup';
-
-// commerce instance
-import commerce from './lib/commerce';
 import Loading from './components/Loading';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import ConfirmationPage from './components/ConfirmationPage';
 
+// commerce instance
+import commerce from './lib/commerce';
+
 function App() {
   // products states
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [addingProduct, setAddingProduct] = useState(false);
   const [order, setOrder] = useState({});
+  // for showing loading on screen before commerce info is loaded
+  const [isLoading, setIsLoading] = useState(false);
+  // for disabling add to cart button in shop page while a product is being added to the cart
+  const [addingProduct, setAddingProduct] = useState(false);
+  // for added to cart or can't add to cart message
   const [popup, setPopup] = useState({
     show: false,
     content: '',
@@ -51,8 +54,6 @@ function App() {
       });
   };
   //   Retrieve the current cart or create one if one does not exist
-  //   https://commercejs.com/docs/sdk/cart
-  //
   const fetchCart = () => {
     setIsLoading(true);
     commerce.cart
@@ -67,6 +68,7 @@ function App() {
         console.log('There was an error fetching the cart', error);
       });
   };
+  // add selected item to the cart
   const handleAddToCart = (productId, quantity) => {
     setAddingProduct(true);
     commerce.cart
@@ -92,6 +94,7 @@ function App() {
         setAddingProduct(false);
       });
   };
+  // for updating cart items (increase or decrease the quantity of a cart item)
   const handleUpdateCartQty = (lineItemId, quantity) => {
     commerce.cart
       .update(lineItemId, { quantity })
@@ -102,6 +105,7 @@ function App() {
         console.log('There was an error updating the cart items', error);
       });
   };
+  // removes an item from the cart by its id
   const handleRemoveFromCart = (lineItemId) => {
     commerce.cart
       .remove(lineItemId)
@@ -115,6 +119,7 @@ function App() {
         );
       });
   };
+  // removes all of the cart items
   const handleEmptyCart = () => {
     commerce.cart
       .empty()
@@ -125,10 +130,12 @@ function App() {
         console.error('There was an error emptying the cart', error);
       });
   };
+  // removes all of the cart items (it is being done after a successful checkout in the handleCaptureCheckout function)
   const refreshCart = async () => {
     const newCart = commerce.cart.refresh();
     setCart(newCart);
   };
+  // it is going to handle checkouts but for now it just shows a fake confirmation page (because of vpn problems in payments)
   const handleCaptureCheckout = async (checkoutTokenID, newOrder) => {
     try {
       // console.log(newOrder);
@@ -148,16 +155,20 @@ function App() {
       console.log(err);
     }
   };
+
+  // retriving products and cart info for the first time
   useEffect(() => {
     fetchProducts();
     fetchCart();
   }, []);
+  // for hiding popup after sometime
   useEffect(() => {
     setTimeout(() => {
       setPopup({ ...popup, show: false });
     }, 3000);
   }, [popup.show]);
 
+  // price formatter instance
   const priceFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'EUR',
@@ -178,6 +189,7 @@ function App() {
         )}
         <Switch>
           <Route path='/' exact>
+            {/* if products info received from server then show the content and if not loading screen will be shown */}
             {products.length !== 0 && (
               <div className='content'>
                 <div className='first-section'>

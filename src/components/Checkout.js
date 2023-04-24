@@ -18,12 +18,6 @@ const Checkout = ({ cart, order, onCaptureCheckout, commerce }) => {
   const [shippingPostalZipCode, setShippingPostalZipCode] = useState('');
   const [shippingCountries, setShippingCountries] = useState({});
   const [shippingCountry, setShippingCountry] = useState('');
-  // Payment details
-  // const [cardNum, setCardNum] = useState('');
-  // const [expMonth, setExpMonth] = useState('');
-  // const [expYear, setExpYear] = useState('');
-  // const [ccv, setCcv] = useState('');
-  // const [billingPostalZipcode, setBillingPostalZipcode] = useState('');
   // Shipping and fulfillment data
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState('');
