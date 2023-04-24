@@ -13,6 +13,7 @@ const PaymentForm = ({
   shippingData,
   setCheckoutFirstStep,
   onCaptureCheckout,
+  priceFormatter,
 }) => {
   const history = useHistory();
   const handleSubmit = async (event, elements, stripe) => {
@@ -72,7 +73,7 @@ const PaymentForm = ({
                   BACK
                 </button>
                 <button className='payment-submit-button' disabled={!stripe}>
-                  Pay {checkoutToken.live.subtotal.formatted_with_symbol}
+                  Pay {priceFormatter.format(checkoutToken.live.subtotal.raw)}
                 </button>
               </div>
             </form>

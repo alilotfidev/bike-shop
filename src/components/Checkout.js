@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
 import '../css/Checkout.css';
 import PaymentForm from './PaymentForm';
-const Checkout = ({ cart, order, onCaptureCheckout, commerce }) => {
+const Checkout = ({
+  cart,
+  order,
+  onCaptureCheckout,
+  commerce,
+  priceFormatter,
+}) => {
   const [checkoutFirstStep, setCheckoutFirstStep] = useState(true);
   const [checkoutToken, setCheckoutToken] = useState({});
   const [shippingData, setShippingData] = useState({});
@@ -277,10 +283,10 @@ const Checkout = ({ cart, order, onCaptureCheckout, commerce }) => {
               setCheckoutFirstStep={setCheckoutFirstStep}
               shippingData={shippingData}
               onCaptureCheckout={onCaptureCheckout}
+              priceFormatter={priceFormatter}
             />
           )
         )}
-        {/* payment form */}
       </div>
     </div>
   );

@@ -243,6 +243,7 @@ function App() {
               order={order}
               onCaptureCheckout={handleCaptureCheckout}
               commerce={commerce}
+              priceFormatter={priceFormatter}
             />
             <Footer />
           </Route>
