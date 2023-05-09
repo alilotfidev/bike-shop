@@ -196,7 +196,7 @@ function App() {
                   <Navbar bodyRef={bodyRef} />
                   <HeroSecion
                     priceFormatter={priceFormatter}
-                    product={products[0]}
+                    products={products}
                   />
                 </div>
                 <NewArrivals

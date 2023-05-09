@@ -1,7 +1,17 @@
+import { useState } from 'react';
 import '../css/HeroSection.css';
 import { Link } from 'react-router-dom';
 
-const HeroSecion = ({ priceFormatter, product }) => {
+const HeroSecion = ({ priceFormatter, products }) => {
+  const [productIndex, setProductIndex] = useState(0);
+  const product = products[productIndex];
+  const handleProductIndexChange = (direction) => {
+    if (direction === 1 && productIndex < products.length - 1) {
+      setProductIndex(productIndex + 1);
+    } else if (direction === -1 && productIndex > 0) {
+      setProductIndex(productIndex - 1);
+    }
+  };
   return (
     <div className='HeroSecion'>
       <div className='hero-section-description'>
@@ -59,7 +69,7 @@ const HeroSecion = ({ priceFormatter, product }) => {
           </div>
         </div>
         <div className='buttons-wrapper'>
-          <div className='prev'>
+          <div className='prev' onClick={() => handleProductIndexChange(-1)}>
             <img
               src='/images/icons/vector-prev.svg'
               alt='prev bike'
@@ -67,7 +77,7 @@ const HeroSecion = ({ priceFormatter, product }) => {
             />
             <p className='prev-text'>Prev</p>
           </div>
-          <div className='next'>
+          <div className='next' onClick={() => handleProductIndexChange(1)}>
             <p className='next-text'>Next</p>
             <img
               src='/images/icons/vector-next.svg'

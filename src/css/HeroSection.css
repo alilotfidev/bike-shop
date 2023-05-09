@@ -65,6 +65,7 @@
   margin: 3em;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .buttons-wrapper > div > img {
   width: 28px;
