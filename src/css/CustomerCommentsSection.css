@@ -11,6 +11,7 @@
 }
 .CustomerCommentsSection .comments .comment {
   width: 30vw;
+  height: 19em;
   padding: 1.5em;
   border: 2px solid var(--black-color);
   border-radius: 4px;
@@ -33,6 +34,7 @@
 .CustomerCommentsSection .comments .comment .comment-content {
   color: var(--grey-color);
   max-width: 80%;
+  height: 40%;
 }
 .CustomerCommentsSection .comments .comment .comment-author {
   display: flex;
@@ -91,5 +93,10 @@
   .CustomerCommentsSection .comments .comment.active {
     width: 70vw;
     margin: 4vh auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  .CustomerCommentsSection .comments .comment {
+    height: 22em;
   }
 }
